@@ -1,6 +1,7 @@
 import Head from "next/head";
 import packageJson from "../package.json";
 import { Hometitle } from "./components/hometitle";
+import { Homebuttons} from "./components/homebuttons";
 
 export default function Home(props) {
   /** You can access to liff and liffError object through the props.
@@ -12,10 +13,11 @@ export default function Home(props) {
   return (
     <div>
       <Head>
-        <title>LIFF Starter</title>
+        <title>About LIFF Starter</title>
       </Head>
       <div className="home">
-        <Hometitle/>
+      <Hometitle title="about page"/>
+      <button onClick= {function() {alert(123);}}>ボタン</button>
         <div className="home__badges">
           <span className="home__badges__badge badge--primary">
             LIFF Starter
@@ -33,32 +35,7 @@ export default function Home(props) {
             GitHub
           </a>
         </div>
-        <div className="home__buttons">
-          <a
-            href="https://developers.line.biz/en/docs/liff/developing-liff-apps/"
-            target="_blank"
-            rel="noreferrer"
-            className="home__buttons__button button--primary"
-          >
-            LIFF Documentation
-          </a>
-          <a
-            href="https://liff-playground.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-            className="home__buttons__button button--tertiary"
-          >
-            LIFF Playground
-          </a>
-          <a
-            href="https://developers.line.biz/console/"
-            target="_blank"
-            rel="noreferrer"
-            className="home__buttons__button button--secondary"
-          >
-            LINE Developers Console
-          </a>
-        </div>
+      <Homebuttons />
       </div>
     </div>
   );
